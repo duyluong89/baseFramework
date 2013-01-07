@@ -1,0 +1,1 @@
+Cufon.replace('h3, .logo h1, .logo h2', { fontFamily: 'Terminal Dosis', hover:true });

@@ -3,7 +3,7 @@ class Home extends MX_Controller{
 	function index(){
 		$data['module'] = 'default';
 		$data['view_file'] = 'home';
-		echo Modules::run('template/three_cols',$data);
+		echo Modules::run('template/two_cols_left',$data);
 	}
 
 	function payment_late(){
