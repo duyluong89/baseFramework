@@ -385,7 +385,8 @@ ul.sf-menu li li li.sfHover ul {
 .sf-shadow ul.sf-shadow-off {
 	background: transparent;
 }
-
+.formtemp input,.formtemp select{ margin-right: 20px; width: 200px}
+.formtemp label{}
 
 
 

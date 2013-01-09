@@ -112,17 +112,28 @@ function choose_rush_services(id){
 			</div>
 
 			<div class="information">
-				<label>Email:</label>
-				<input type="text" name="txtemail" class="email"><br>
-				<label>Comment:</label>
-				<textarea name="description" cols="35" rows="7">
-				</textarea>
+				<div class="price">
+					<span>$Total:</span>
+
+				</div>
+				<div class="clear"></div>
+				<div class="infor">
+
+					<span class="sinfor">Information</span>
+					<table><tr><td>
+					<label>Email:</label></td>
+					<td><input type="text" name="txtemail" class="email"></td></tr>
+					<tr><td valign="top"><label>Comment:</label></td>
+					<td><textarea name="description" cols="35" rows="7">
+					</textarea></td></tr>
+				</table>
+				</div>
 
 			</div>
 
 			<div class="payment">
 				<?php if(isset($payment_form)) echo $payment_form;?>
-				<input type="submit" name="submit" value="Payment late"/>
+				<input type="submit" name="submit" value="Payment late" class="paylate"/>
 			</div>
 		    
 		</form>
@@ -135,50 +146,51 @@ function choose_rush_services(id){
 
 	<div class="formtemp">
 				<div class="numbervisa">1th aplicant</div>
-				
-					<lable>Personal Information :( * means required field )</lable><br>
-					<label for="fullname">Full Name(as in passport):</label>
-					<input type="text" name="fullname[]" class="fullname" /> <br />
-					<label for="gender">Gender :</label>
-					<select name="gender[]" class="gender">
+					<table class="ii"><tr><td colspan="2">
+					<lable class="lbldot"><span class="ico-ticket"></span>Personal Information :( * means required field )</lable></td></tr>
+					<tr><td><label for="fullname">Full Name(as in passport):</label></td>
+					<td><input type="text" name="fullname[]" class="fullname" /> </td></tr>
+				<tr><td><label for="gender">Gender :</label></td>
+					<td><select name="gender[]" class="gender">
 						<option value ="Male">Male</option>
 						<option value ="FeMale">FeMale</option>
-					</select>
-					 <br />
-					<label for="dateofbirth">Date of birth :</label>
-					<input type="text" name="dateofbirth[]"  class="date-pick dateofbirth" id="a" onclick="javascript:NewCssCal('a')"/> 
-					<img src="images/cal.gif" onclick="javascript:NewCssCal('a')" style="cursor:pointer" class="dddateofbirth"/> <br />
-					<label for="national">Present Nationality :</label>
-					<select name="national[]" class="national">
+					</select></td></tr>
+				<tr><td>	<label for="dateofbirth">Date of birth :</label></td>
+				<td>	<input type="text" name="dateofbirth[]"  class="date-pick dateofbirth" id="a" onclick="javascript:NewCssCal('a')"/> 
+					<img src="images/cal.gif" onclick="javascript:NewCssCal('a')" style="cursor:pointer" class="dddateofbirth"/> </td></tr>
+					<tr><td><label for="national">Present Nationality :</label></td>
+					<td><select name="national[]" class="national">
 						<option value="US">US</option>
-					</select> <br /> 	
-					<label for="passport">Passport number:</label>
-					<input type="text" name="passport[]" class="passport" /> <br />
-					<lable>Personal Information :( * means required field )</lable><br>
-					<label for="typevisa">Type of visa and validity:</label>
-					<input type="text" name="typevisa[]" class="typevisa" /> <br />
-					<label for="arrival">Arrival Airport:</label>
-					<select name="arrival[]" class="arrival">
+					</select> </td></tr>
+					<tr><td><label for="passport">Passport number:</label></td>
+					<td><input type="text" name="passport[]" class="passport" />  </td></tr>
+					<tr><td colspan="2"><lable class="lbldot" ><span class="ico-ticket"></span>Personal Information :( * means required field )</lable></td></tr>
+					<tr><td><label for="typevisa">Type of visa and validity:</label></td>
+					<td><input type="text" name="typevisa[]" class="typevisa" /> </td></tr>
+				<tr><td>	<label for="arrival">Arrival Airport:</label></td>
+					<td><select name="arrival[]" class="arrival">
 						<option value ="Ha Noi">Ha Noi(Noi Bai)</option>
 						<option value ="HCM">Ho Chi Minh - Sai Gon(Tan Son Nhat)</option>
 						<option value ="Ha Noi">Da Nang</option>
 					</select>
-					 <br>
-					<label for="dateofarrival">Date of arrival:</label>
-					<input type="text" name="dateofarrival[]"  class="date-pick dateofarrival"  onclick="javascript:NewCssCal('date')" id="date" />
+					 </td></tr>
+					<tr><td><label for="dateofarrival">Date of arrival:</label></td>
+					<td><input type="text" name="dateofarrival[]"  class="date-pick dateofarrival"  onclick="javascript:NewCssCal('date')" id="date" />
 					<img src="images/cal.gif" onclick="javascript:NewCssCal('date')" style="cursor:pointer" class="dddateofarrival"/>
-					 <br>
-					<label for="rushservices">Rush services:</label>
-						<select name="rushservices[]" class="rushservices" onchange="choose_rush_services('rushservices')" id="rushservices">
+					  </td></tr>
+					<tr><td><label for="rushservices">Rush services:</label> </td>
+						<td><select name="rushservices[]" class="rushservices" onchange="choose_rush_services('rushservices')" id="rushservices">
 							<option value="0" selected="selected"></option>
 							<option value="Normal - 2 working days" >Normal - 2 working days</option>
 							<option value="Urgent - 1 working day">Urgent - 1 working day</option>
 							<option value="Urgent - 6-8 working hours">Urgent - 6-8 working hours</option>
 							<option value="Urgent - 4 working hours">Urgent - 4 working hours</option>
 							<option value="Urgent - 1 hour or Holiday">Urgent - 1 hour or Holiday</option>
-						</select><br>
-					<label class="lblrushservices" id="lblrushservices"></label>
-					<br>
+						</select>
+						<br /><label class="lblrushservices" id="lblrushservices"></label>
+					</td></tr>
+					
+					</table>
 					
 				
 			</div>

@@ -1,5 +1,38 @@
 .information{
-	float: right;
-	width: 596px;
+float: right;
+    margin-right: 139px;
+    width: 465px;
 }
 #tt{float: left;}
+.clear{clear: both;
+}
+.infor{border: 1px solid #95B8E7; position: relative;padding: 21px;}
+
+.information .price{margin-bottom: 10px;}
+.infor span.sinfor{background: none repeat scroll 0 0 white;
+    font-family: arial;
+    font-weight: bold;
+    left: 11px;
+    padding: 1px;
+    position: absolute;
+    text-transform: uppercase;
+    top: -11px; color: #95B8E7; }
+
+.lbldot{ color: #95B8E7;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 31px;
+    position: relative; }
+.ico-ticket{ background: url("../images/ticket.gif") no-repeat scroll 0 0 transparent;
+    margin-left: 6px;
+    padding-bottom: 26px; top: -6px;
+    padding-left: 24px; position: absolute; left: 0px;}
+
+.formtemp select{
+    padding: 3px;
+    width: 212px;}
+    table.ii td{padding-left: 7px;}
+.payment input{margin-left: 30px; font-size: 16px; line-height: 20px; margin-top: 5px;}
+.payment p{line-height: 20px;}
+input.paylate{margin-top: -30px}

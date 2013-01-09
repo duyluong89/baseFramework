@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/baseci/';
+$config['base_url']	= 'http://localhost:8080/basecodeigniter/';
 
 /*
 |--------------------------------------------------------------------------
