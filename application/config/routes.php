@@ -43,6 +43,7 @@ $route['404_override'] = '';
 
 $route['admin/country'] = 'country/admin/manager';
 $route['admin/country/add'] = 'country/admin/manager/add';
+$route['admin/visa'] = 'visa/admin/manager';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
