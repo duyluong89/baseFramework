@@ -159,6 +159,14 @@ if (defined('ENVIRONMENT'))
  *  Now that we know the path, set the main path constants
  * -------------------------------------------------------------------
  */
+
+	/*****
+		Define Status 
+	******/
+	define('PAYDONE', "pay done");
+	define('WAITVISA', "Wait visa");
+	
+
 	// The name of THIS file
 	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
 

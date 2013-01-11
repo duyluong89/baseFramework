@@ -96,53 +96,94 @@
     
     <div class="line"></div>
     
-    <!-- Page statistics area -->
-    <div class="statsRow">
-        <div class="wrapper">
-        	<div class="controlB">
-            	<ul>
-                    <li><a href="<?php echo base_url()?>admin/country/add" title=""><img src="<?php echo $base ?>images/icons/control/32/plus.png" alt="" /><span>Add new user</span></a></li>
-<!--                <li><a href="#" title=""><img src="images/icons/control/32/database.png" alt="" /><span>New DB entry</span></a></li>
-                    <li><a href="#" title=""><img src="images/icons/control/32/hire-me.png" alt="" /><span>Add new user</span></a></li>
-                    <li><a href="#" title=""><img src="images/icons/control/32/statistics.png" alt="" /><span>Check statistics</span></a></li>
-                    <li><a href="#" title=""><img src="images/icons/control/32/comment.png" alt="" /><span>Review comments</span></a></li>
-                    <li><a href="#" title=""><img src="images/icons/control/32/order-149.png" alt="" /><span>Check orders</span></a></li>-->
-                </ul>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="line"></div>
-    
+
     <!-- Main content wrapper -->
     <div class="wrapper">
     
         <!-- Dynamic table -->
         <div class="widget">
-            <div class="title"><img src="<?php echo $base ?>images/icons/dark/full2.png" alt="" class="titleIcon" /><h6>Users Management</h6></div>                          
+            <div class="title"><img src="<?php echo $base ?>images/icons/dark/full2.png" alt="" class="titleIcon" /><h6>Pay done</h6></div>                          
             <table cellpadding="0" cellspacing="0" border="0" class="display dTable">
             <thead>
             <tr>
-            <th>id</th>
-            <th>Country</th>
+            <th>Number</th> 
+            <th>Code</th>
+            <th>Name</th>
+            <th>Date In</th>
+            <th>Total</th>
+            <th>Rush</th>
+            <th>Pay Date</th>
+            <th>Status</th>
             <th>Option</th>
             </tr>
             </thead>
             <tbody>
-               <?php if(isset($Visa) and count($Visa) > 0): ?>
-                <?php foreach($Visa as $vi ): ?>
+               <?php if(isset($paydone) and count($paydone) > 0): ?>
+                <?php foreach($paydone as $pay ): ?>
             <tr class="">
-                <td><?php echo $vi->code?></td>
-                <td><?php echo $vi->name?></td>
-                <td class="center"><a href="<?php echo base_url() . 'country/admin/manager/del/' . $visa->code ?>" onclick="return confirm('Do you want to delete country?')" >Del</a>-
-                	<a href="<?php echo base_url() . 'country/admin/manager/edit/' . $vi->code ?>">edit</a></td>
+                <td><a href="#"><?php echo $pay->number_visa?></a></td>
+                <td><a href="#" class="pay-code"><?php echo $pay->code?></a>
+                    <div class="content c-visa" id="content-<?php echo $pay->code?>">
+                        <?php echo $pay->content?>
+                    </div>
+                </td>
+                <td><?php echo $pay->name?></td>
+                <td><?php echo $pay->date_in?></td>
+                <td><?php echo $pay->total?></td>
+                <td><?php echo $pay->rush?></td>
+                <td><?php echo $pay->pay_date?></td>
+                <td><?php echo $pay->status?></td>
+                <td class="center"><a href="<?php echo base_url() . 'country/admin/manager/del/' . $pay->code ?>" onclick="return confirm('Do you want to delete country?')" >Del</a>-
+                	<a href="<?php echo base_url() . 'country/admin/manager/edit/' . $pay->code ?>">edit</a></td>
             </tr>
             <?php endforeach;?>
             <?php endif;?>
             </tbody>
-            </table>  
+            </table>
+        </div>
+
+        <div class="widget">
+            <div class="title"><img src="<?php echo $base ?>images/icons/dark/full2.png" alt="" class="titleIcon" /><h6>Wait paysa</h6></div>                          
+            <table cellpadding="0" cellspacing="0" border="0" class="display dTable">
+            <thead>
+            <tr>
+            <th>Number</th> 
+            <th>Code</th>
+            <th>Name</th>
+            <th>Date In</th>
+            <th>Total</th>
+            <th>Rush</th>
+            <th>Pay Date</th>
+            <th>Status</th>
+            <th>Option</th>
+            </tr>
+            </thead>
+            <tbody>
+               <?php if(isset($waitvisa) and count($waitvisa) > 0): ?>
+                <?php foreach($waitvisa as $wait ): ?>
+            <tr class="">
+                <td><a href="#"><?php echo $wait->number_visa?></a></td>
+                <td><a href="#" class="wait-code"><?php echo $wait->code?></a>
+                    <div class="content c-visa" id="content-<?php echo $pay->code?>">
+                        <?php echo $pay->content?>
+                    </div>
+                </td>
+                <td><?php echo $wait->name?></td>
+                <td><?php echo $wait->date_in?></td>
+                <td><?php echo $wait->total?></td>
+                <td><?php echo $wait->rush?></td>
+                <td><?php echo $wait->pay_date?></td>
+                <td><?php echo $wait->status?></td>
+                <td class="center"><a href="<?php echo base_url() . 'country/admin/manager/del/' . $wait->code ?>" onclick="return confirm('Do you want to delete country?')" >Del</a>-
+                    <a href="<?php echo base_url() . 'country/admin/manager/edit/' . $wait->code ?>">edit</a></td>
+            </tr>
+            <?php endforeach;?>
+            <?php endif;?>
+            </tbody>
+            </table> 
         </div>
     
     </div>
+
+</div>
     

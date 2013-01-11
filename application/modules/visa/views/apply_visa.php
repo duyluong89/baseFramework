@@ -160,7 +160,11 @@ function choose_rush_services(id){
 					<img src="images/cal.gif" onclick="javascript:NewCssCal('a')" style="cursor:pointer" class="dddateofbirth"/> </td></tr>
 					<tr><td><label for="national">Present Nationality :</label></td>
 					<td><select name="national[]" class="national">
-						<option value="US">US</option>
+						<?php if(count($Countries) >0):?>
+							<?php foreach ($Countries as $key => $country): ?>
+								<option value="<?php echo $country->id ?>"><?php echo $country->name?></option>
+							<?php endforeach?>
+						<?php endif; ?>
 					</select> </td></tr>
 					<tr><td><label for="passport">Passport number:</label></td>
 					<td><input type="text" name="passport[]" class="passport" />  </td></tr>

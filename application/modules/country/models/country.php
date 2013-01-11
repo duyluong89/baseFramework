@@ -5,7 +5,9 @@ class Country extends MY_Model{
 		$this->tableName = "country";
 	}
 
-	
+	function get_active(){
+		return $this->get_where_custom('active',1);
+	}
 }
 
 ?>

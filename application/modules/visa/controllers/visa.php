@@ -3,9 +3,11 @@ class Visa extends MX_Controller{
 	function __construct(){
 		parent::__construct();
 		 $this->load->library('paypal_lib');
+         $this->load->model("country/Country");
 	}
 
 	function index(){
+            $data['Countries'] = $this->Country->get_active();
 			$data['module'] = 'visa';
 			$data['view_file'] = 'apply_visa';
 			$data['payment_form'] =  $this->form();
