@@ -43,6 +43,17 @@
 
 /* Wrappers */
 
+.c-visa{display: none;}
+.show{display: block;}
+.hide{display: none;}
+.search-visa{margin-left: 20px; margin-top: 10px;}
+.search-visa span.label-search,.proccess-visa span.label-search{margin-right: 4px; font-weight: bold; font-size: 14px; 	}
+.proccess-visa{margin: 5px 20px;}
+.tools-visa{position: fixed; bottom: 20px; width: 100%; background: white;z-index: 90;}
+form.feditvisa{margin-top: 15px; margin-left: 10px;}
+form.feditvisa label{font-size: 14px; font-weight: bold; margin-right: 10px;}
+
+
 html { height: 100%; background: transparent url(../images/backgrounds/bg.jpg); }
 .html { height: 100%;  }
 body { min-height: 100%; font-size: 12px; color: #595959; font-family: Arial, Helvetica, sans-serif; line-height: 20px; position: relative; }

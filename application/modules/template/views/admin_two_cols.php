@@ -7,13 +7,13 @@
 <?php $base =  base_url() . 'skin/backend/default/'; ?>
 <link href="<?php echo $base ?>css/main.css" rel="stylesheet" type="text/css" />
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
 
 <script type="text/javascript" src="<?php echo $base?>js/plugins/spinner/ui.spinner.js"></script>
 <script type="text/javascript" src="<?php echo $base?>js/plugins/spinner/jquery.mousewheel.js"></script>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-
+<script type="text/javascript" src="<?php echo $base?>js/jquery.zclip.js"></script>
 <script type="text/javascript" src="<?php echo $base?>js/plugins/charts/excanvas.min.js"></script>
 <script type="text/javascript" src="<?php echo $base?>js/plugins/charts/jquery.flot.js"></script>
 <script type="text/javascript" src="<?php echo $base?>js/plugins/charts/jquery.flot.orderBars.js"></script>
@@ -57,10 +57,9 @@
 
 <script type="text/javascript" src="<?php echo $base?>js/plugins/calendar.min.js"></script>
 <script type="text/javascript" src="<?php echo $base?>js/plugins/elfinder.min.js"></script>
-<script type="text/javascript" src="ckfinder/ckfinder.js"></script>
 <script type="text/javascript" src="<?php echo $base?>js/custom.js"></script>
+<script type="text/javascript" src="<?php echo $base?>ckeditor/ckeditor.js"></script>
 
-<script type="text/javascript" src="<?php echo $base?>js/charts/chart.js"></script>
     </head>
     <body>
         <!-- Style switcher -->

@@ -1,6 +1,7 @@
 $(function() {
 	
-	
+	 
+
     $(".pat1").click(function(){
         $("html").css('background','url(images/backgrounds/patterns/1.png) repeat');
         return false;
@@ -875,5 +876,4 @@ contextmenu : {
 	
 	$("select, input:checkbox, input:radio, input:file").uniform();
 
-	
 });

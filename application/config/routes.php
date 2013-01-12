@@ -44,6 +44,12 @@ $route['404_override'] = '';
 $route['admin/country'] = 'country/admin/manager';
 $route['admin/country/add'] = 'country/admin/manager/add';
 $route['admin/visa'] = 'visa/admin/manager';
-
+$route['admin/visa/manager/search'] = 'visa/admin/manager/search';
+$route['admin/visa/manager/default'] = 'visa/admin/manager/load_default';
+$route['admin/visa/manager/updatedispatch'] = 'visa/admin/manager/updatedispatch';
+$route['admin/visa/manager/updatestatus'] = 'visa/admin/manager/updatestatus';
+$route['admin/visa/edit/(:any)'] =  'visa/admin/manager/edit/$1';
+$route['admin/visa/del/(:any)'] =  'visa/admin/manager/del_visa/$1';
+$route['admin/visa/update'] = 'visa/admin/manager/update_visa';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

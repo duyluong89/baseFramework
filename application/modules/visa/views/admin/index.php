@@ -1,189 +1,172 @@
  <!-- Responsive header -->
+ <script type="text/javascript">
+    $(function(){
+        $.ajax({
+              url: "<?php echo base_url() ?>admin/visa/manager/default",
+              async: false,
+              type: "POST",
+              dataType: "html",
+              success: function(data) {
+                $('#containt').html(data);
+              }
+        })
+
+         $("#searchbutton").click(function(){
+           var key = $('input.keysearch').val();
+           if(key !=''){
+                var form_data = {
+                    keysearch : key,
+                    ajax : '1'
+                };
+                var shtml="";
+                $.ajax({
+                    url: "<?php echo site_url('admin/visa/manager/search'); ?>",
+                    type: 'POST',
+                    async : false,
+                    dataType:'html',
+                    data: form_data,
+                    success: function(data) {
+                        $('#containt').html(data);
+                    }
+                })
+            }else{
+                $.ajax({
+                  url: "<?php echo base_url() ?>admin/visa/manager/default",
+                  async: false,
+                  type: "POST",
+                  dataType: "html",
+                  success: function(data) {
+                    $('#containt').html(data);
+                  }
+        })
+
+            }
+            return false;
+        });
+
+        $("#updatevisa").click(function(){
+            var code = $("input#visa-code").val();
+            var dpatch = $("input#visa-dispatch").val();
+            if(code !=''){
+                var form_data = {
+                    codekey : code,
+                    dispatchkey : dpatch,
+                    ajax : '1'
+                };
+                 $.ajax({
+                      url: "<?php echo base_url() ?>admin/visa/manager/updatedispatch",
+                      async: false,
+                      type: "POST",
+                      data: form_data,
+                      dataType: "html",
+                      success: function(data) {
+                        $('#containt').html(data);
+                  }
+
+            })
+                }
+                return false;
+        });
+
+        //change pay done
+
+        $("#changepaydone").click(function(){
+            var code = $("input#visa-code").val();
+            if(code !=''){
+                var form_data = {
+                    codekey : code,
+                    status: '<?php echo PAYDONE;?>'
+                };
+                 $.ajax({
+                      url: "<?php echo base_url() ?>admin/visa/manager/updatestatus",
+                      async: false,
+                      type: "POST",
+                      data: form_data,
+                      dataType: "html",
+                      success: function(data) {
+                        $('#containt').html(data);
+                  }
+
+            })
+                }
+            return false;
+        });
+
+        $("#changewaitvisa").click(function(){
+            var code = $("input#visa-code").val();
+            if(code !=''){
+                var form_data = {
+                    codekey : code,
+                    status: '<?php echo WAITVISA;?>'
+                };
+                 $.ajax({
+                      url: "<?php echo base_url() ?>admin/visa/manager/updatestatus",
+                      async: false,
+                      type: "POST",
+                      data: form_data,
+                      dataType: "html",
+                      success: function(data) {
+                        $('#containt').html(data);
+                  }
+
+            })
+                }
+            return false;
+        });
+    });
+
+ </script>
  <?php $base =  base_url() . 'skin/backend/default/'; ?>
+
+
     <div class="resp">
         <div class="respHead">
             <a href="index.html" title=""><img src="images/loginLogo.png" alt="" /></a>
         </div>
         
         <div class="cLine"></div>
-        <div class="smalldd">
-            <span class="goTo"><img src="images/icons/light/frames.png" alt="" />Dynamic table</span>
-            <ul class="smallDropdown">
-                <li><a href="index.html" title=""><img src="images/icons/light/home.png" alt="" />Dashboard</a></li>
-                <li><a href="charts.html" title=""><img src="images/icons/light/stats.png" alt="" />Statistics and charts</a></li>
-                <li><a href="#" title="" class="exp"><img src="images/icons/light/pencil.png" alt="" />Forms stuff<strong>4</strong></a>
-                    <ul>
-                        <li><a href="forms.html" title="">Form elements</a></li>
-                        <li><a href="form_validation.html" title="">Validation</a></li>
-                        <li><a href="form_editor.html" title="">WYSIWYG and file uploader</a></li>
-                        <li class="last"><a href="form_wizards.html" title="">Wizards</a></li>
-                    </ul>
-                </li>
-                <li><a href="ui_elements.html" title=""><img src="images/icons/light/users.png" alt="" />Interface elements</a></li>
-                <li><a href="tables.html" title="" class="exp"><img src="images/icons/light/frames.png" alt="" />Tables<strong>3</strong></a>
-                    <ul>
-                        <li><a href="table_static.html" title="">Static tables</a></li>
-                        <li><a href="table_dynamic.html" title="">Dynamic table</a></li>
-                        <li class="last"><a href="table_sortable_resizable.html" title="">Sortable &amp; resizable tables</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" title="" class="exp"><img src="images/icons/light/fullscreen.png" alt="" />Widgets and grid<strong>2</strong></a>
-                    <ul>
-                        <li><a href="widgets.html" title="">Widgets</a></li>
-                        <li class="last"><a href="grid.html" title="">Grid</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" title="" class="exp"><img src="images/icons/light/alert.png" alt="" />Error pages<strong>6</strong></a>
-                    <ul class="sub">
-                        <li><a href="403.html" title="">403 page</a></li>
-                        <li><a href="404.html" title="">404 page</a></li>
-                        <li><a href="405.html" title="">405 page</a></li>
-                        <li><a href="500.html" title="">500 page</a></li>
-                        <li><a href="503.html" title="">503 page</a></li>
-                        <li class="last"><a href="offline.html" title="">Website is offline</a></li>
-                    </ul>
-                </li>
-                <li><a href="file_manager.html" title=""><img src="images/icons/light/files.png" alt="" />File manager</a></li>
-                <li><a href="#" title="" class="exp"><img src="images/icons/light/create.png" alt="" />Other pages<strong>3</strong></a>
-                    <ul>
-                        <li><a href="typography.html" title="">Typography</a></li>
-                        <li><a href="calendar.html" title="">Calendar</a></li>
-                        <li class="last"><a href="gallery.html" title="">Gallery</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="cLine"></div>
+        
     </div>
     
     <!-- Title area -->
     <div class="titleArea">
         <div class="wrapper">
             <div class="pageTitle">
-                <h5>User Management</h5>
-                <span>List all users in table.</span>
+                <h5>Visa Management</h5>
+                <span>List all visa on status pay done, wait visa.</span>
             </div>
-            <div class="middleNav">
-                <ul>
-                    <li class="mUser"><a href="#" title=""><span class="users"></span></a>
-                        <ul class="mSub1">
-                            <li><a href="#" title="">Add user</a></li>
-                            <li><a href="#" title="">Statistics</a></li>
-                            <li><a href="#" title="">Orders</a></li>
-                        </ul>
-                    </li>
-                    <li class="mMessages"><a href="#" title=""><span class="messages"></span></a>
-                        <ul class="mSub2">
-                            <li><a href="#" title="">New tickets<span class="numberRight">8</span></a></li>
-                            <li><a href="#" title="">Pending tickets<span class="numberRight">12</span></a></li>
-                            <li><a href="#" title="">Closed tickets</a></li>
-                        </ul>
-                    </li>
-                    <li class="mFiles"><a href="#" title="Or you can use a tooltip" class="tipN"><span class="files"></span></a></li>
-                    <li class="mOrders"><a href="#" title=""><span class="orders"></span><span class="numberMiddle">8</span></a>
-                        <ul class="mSub4">
-                            <li><a href="#" title="">Pending uploads</a></li>
-                            <li><a href="#" title="">Statistics</a></li>
-                            <li><a href="#" title="">Trash</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="clear"></div>
-            </div>
+         
             <div class="clear"></div>
         </div>
     </div>
     
     <div class="line"></div>
-    
+    <div id="containt"></div>
 
-    <!-- Main content wrapper -->
-    <div class="wrapper">
-    
-        <!-- Dynamic table -->
-        <div class="widget">
-            <div class="title"><img src="<?php echo $base ?>images/icons/dark/full2.png" alt="" class="titleIcon" /><h6>Pay done</h6></div>                          
-            <table cellpadding="0" cellspacing="0" border="0" class="display dTable">
-            <thead>
-            <tr>
-            <th>Number</th> 
-            <th>Code</th>
-            <th>Name</th>
-            <th>Date In</th>
-            <th>Total</th>
-            <th>Rush</th>
-            <th>Pay Date</th>
-            <th>Status</th>
-            <th>Option</th>
-            </tr>
-            </thead>
-            <tbody>
-               <?php if(isset($paydone) and count($paydone) > 0): ?>
-                <?php foreach($paydone as $pay ): ?>
-            <tr class="">
-                <td><a href="#"><?php echo $pay->number_visa?></a></td>
-                <td><a href="#" class="pay-code"><?php echo $pay->code?></a>
-                    <div class="content c-visa" id="content-<?php echo $pay->code?>">
-                        <?php echo $pay->content?>
-                    </div>
-                </td>
-                <td><?php echo $pay->name?></td>
-                <td><?php echo $pay->date_in?></td>
-                <td><?php echo $pay->total?></td>
-                <td><?php echo $pay->rush?></td>
-                <td><?php echo $pay->pay_date?></td>
-                <td><?php echo $pay->status?></td>
-                <td class="center"><a href="<?php echo base_url() . 'country/admin/manager/del/' . $pay->code ?>" onclick="return confirm('Do you want to delete country?')" >Del</a>-
-                	<a href="<?php echo base_url() . 'country/admin/manager/edit/' . $pay->code ?>">edit</a></td>
-            </tr>
-            <?php endforeach;?>
-            <?php endif;?>
-            </tbody>
-            </table>
+   <div class="line"></div>
+
+    <div class="tools-visa">
+        <div class="search-visa">
+            <form action="#" method="post" class="form" >
+                <span class="label-search">Search visa</span><input type="text" name="txtsearch" class="keysearch" placeholder="Please enter code" style="width:170px; font-size:13px;" />
+                <input type="submit" value="Search visa" name="searchbutton" id="searchbutton" />
+                <input type="submit" value="Update visa" name="update_visa" id="updatevisa" />
+            </form>
         </div>
 
-        <div class="widget">
-            <div class="title"><img src="<?php echo $base ?>images/icons/dark/full2.png" alt="" class="titleIcon" /><h6>Wait paysa</h6></div>                          
-            <table cellpadding="0" cellspacing="0" border="0" class="display dTable">
-            <thead>
-            <tr>
-            <th>Number</th> 
-            <th>Code</th>
-            <th>Name</th>
-            <th>Date In</th>
-            <th>Total</th>
-            <th>Rush</th>
-            <th>Pay Date</th>
-            <th>Status</th>
-            <th>Option</th>
-            </tr>
-            </thead>
-            <tbody>
-               <?php if(isset($waitvisa) and count($waitvisa) > 0): ?>
-                <?php foreach($waitvisa as $wait ): ?>
-            <tr class="">
-                <td><a href="#"><?php echo $wait->number_visa?></a></td>
-                <td><a href="#" class="wait-code"><?php echo $wait->code?></a>
-                    <div class="content c-visa" id="content-<?php echo $pay->code?>">
-                        <?php echo $pay->content?>
-                    </div>
-                </td>
-                <td><?php echo $wait->name?></td>
-                <td><?php echo $wait->date_in?></td>
-                <td><?php echo $wait->total?></td>
-                <td><?php echo $wait->rush?></td>
-                <td><?php echo $wait->pay_date?></td>
-                <td><?php echo $wait->status?></td>
-                <td class="center"><a href="<?php echo base_url() . 'country/admin/manager/del/' . $wait->code ?>" onclick="return confirm('Do you want to delete country?')" >Del</a>-
-                    <a href="<?php echo base_url() . 'country/admin/manager/edit/' . $wait->code ?>">edit</a></td>
-            </tr>
-            <?php endforeach;?>
-            <?php endif;?>
-            </tbody>
-            </table> 
+        <div class="proccess-visa">
+            <form class="form" action="#" method="post">
+                <input type="text" name="visa-name" id="visa-name" style="width:170px; font-size:13px;"  />
+                <input  type="text" name="visa-code" id="visa-code" style="width:170px; font-size:13px;" />
+                <span class="label-search">DisPatch:</span>
+                <input  type="text" name="visa-dispatch" id="visa-dispatch" style="width:170px; font-size:13px;" />
+                <input  type="submit" name="changepaydone" id="changepaydone" value="Move to Pay done" />
+                <input  type="submit" name="changewaitvisa" id="changewaitvisa" value="Move to Wait visa" />
+                
+
+
+            </form>
         </div>
-    
     </div>
-
 </div>
     
