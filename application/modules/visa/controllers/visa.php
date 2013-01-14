@@ -2,7 +2,7 @@
 class Visa extends MX_Controller{
 	function __construct(){
 		parent::__construct();
-		 $this->load->library('paypal_lib');
+		 $this->load->library('paypal_lib','onepay');
          $this->load->model("country/Country");
 	}
 
@@ -52,14 +52,14 @@ class Visa extends MX_Controller{
                 
             $this->load->library('paypal_lib');
             $this->paypal_lib->add_field('business', 'vuongkiemminh@gmail.com');
-            $this->paypal_lib->add_field('return', site_url('visa/paypal/success'));
-            $this->paypal_lib->add_field('cancel_return', site_url('visa/paypal/cancel'));
+            $this->paypal_lib->add_field('return', site_url('visa/success'));
+            $this->paypal_lib->add_field('cancel_return', site_url('visa/cancel'));
             $this->paypal_lib->add_field('notify_url', site_url('visa/paypal/ipn')); // <-- IPN url
             $this->paypal_lib->add_field('custom', '1234567890'); // <-- Verify return
 
             $this->paypal_lib->add_field('item_name', 'Paypal Test Transaction');
             $this->paypal_lib->add_field('item_number', '6941');
-            $this->paypal_lib->add_field('amount', '197');
+            $this->paypal_lib->add_field('amount', '0.01');
 
                 // if you want an image button use this:
             //$this->paypal_lib->image('btn_paynowCC_LG.gif');
@@ -75,8 +75,8 @@ class Visa extends MX_Controller{
         function auto_form()
         {
             $this->paypal_lib->add_field('business', 'PAYPAL@EMAIL.COM');
-            $this->paypal_lib->add_field('return', site_url('visa/paypal/success'));
-            $this->paypal_lib->add_field('cancel_return', site_url('visa/paypal/cancel'));
+            $this->paypal_lib->add_field('return', site_url('visa/success'));
+            $this->paypal_lib->add_field('cancel_return', site_url('visa/cancel'));
             $this->paypal_lib->add_field('notify_url', site_url('visa/paypal/ipn')); // <-- IPN url
             $this->paypal_lib->add_field('custom', '1234567890'); // <-- Verify return
 
@@ -105,6 +105,8 @@ class Visa extends MX_Controller{
                 // order based on a database (which can be modified with the IPN code 
                 // below).
 
+            // Update status Pay done when payment successfully and send mail 
+                //var_dump($_POST); die();
                 $data['pp_info'] = $_POST;  
                 $this->load->view('success', $data);
         }
@@ -142,6 +144,13 @@ class Visa extends MX_Controller{
                         $this->email->send();
                 }
         }
+
+        function send_paypal(){
+            if(isset($_POST)){
+
+            }
+            echo json_encode("successfully");
+         }
 
 }
 ?>

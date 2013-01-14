@@ -56,7 +56,28 @@ $(document).ready(function(){
 		
         });
 	$("input[name=pp_submit]").click(function(){
-		$("form[name=payment_form]").attr("action","https://www.paypal.com/cgi-bin/webscr");
+			var choose = $('input:radio[name=checkpay]:checked').val();
+			var form_data = {
+				sss: "dasdas",
+				name: "dsdassss"
+			};
+		 $.ajax({
+                  url: "<?php echo base_url() ?>visa/send_paypal",
+                  async: false,
+                  type: "POST",
+                  data: form_data,
+                  dataType: "json",
+                  success: function(data) {
+                    //$('#containt').html(data);
+                    if(choose =="pp"){
+                    	$("form[name=payment_form]").attr("action","https://www.paypal.com/cgi-bin/webscr");
+                    }else{
+                    	$("form[name=payment_form]").attr("action","#");
+                    }
+                  }
+
+            })
+		
 	});
 
 
@@ -107,7 +128,7 @@ function choose_rush_services(id){
 		<option value="10">10</option>
 	</select>
 	<div class="frmvisa">
-		<form action="<?php echo base_url() ?>visa/apply" method="post" name="payment_form" >
+		<form action="<?php echo base_url() ?>visa/send_paypal" method="post" name="payment_form" >
 			<div id="tt" class="easyui-tabs" style="width:400px;height:auto;">
 			</div>
 
@@ -132,8 +153,12 @@ function choose_rush_services(id){
 			</div>
 
 			<div class="payment">
-				<?php if(isset($payment_form)) echo $payment_form;?>
+				<div class="option"><input type="radio" name="checkpay" value="op"> Checkout with Onepay <br>
+				<input type="radio" name="checkpay" value="pp"> Checkout with Paypal</div>
+				<div class="pay-button"><?php if(isset($payment_form)) echo $payment_form;?></div>
+				<div class="or">OR</div>
 				<input type="submit" name="submit" value="Payment late" class="paylate"/>
+
 			</div>
 		    
 		</form>

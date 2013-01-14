@@ -2428,4 +2428,19 @@ a.dp-choose-date.dp-disabled {
 #calendar-me {
 	margin: 20px;
 }
+
+.option{width: 200px}
+.payment{float:right;
+  margin:-57px 428px 0; position: relative;}
+  input[name='pp_submit']{
+  position:absolute;
+  right:-184px;
+  top:6px;}
+
+  .paylate{}
+
+.or{left:42px;
+  margin-top:22px;
+  position:absolute;
+  top:25px; font-weight: bold;}
 /* Always remember to compress your live stylesheet and keep an uncompressed backup */

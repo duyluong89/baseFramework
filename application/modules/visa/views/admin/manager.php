@@ -100,7 +100,7 @@
                 <td><a href="#"><?php echo $wait->number_visa?></a></td>
                 <td><a href="#" class="pay-code" alt="content-<?php echo $wait->code?>"><?php echo $wait->code?></a>
                     <div class="content c-visa" id="content-<?php echo $wait->code?>">
-                        <?php echo $pay->content?>
+                        <?php echo $wait->content?>
                     </div>
                 </td>
                 <td id="name-<?php echo $wait->code?>"><?php echo $wait->name?></td>
