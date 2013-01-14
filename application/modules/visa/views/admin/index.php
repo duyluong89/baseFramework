@@ -149,7 +149,7 @@
             <form action="#" method="post" class="form" >
                 <span class="label-search">Search visa</span><input type="text" name="txtsearch" class="keysearch" placeholder="Please enter code" style="width:170px; font-size:13px;" />
                 <input type="submit" value="Search visa" name="searchbutton" id="searchbutton" />
-                <input type="submit" value="Update visa" name="update_visa" id="updatevisa" />
+                <input type="submit" value="Update Dispatch" name="update_visa" id="updatevisa" />
             </form>
         </div>
 

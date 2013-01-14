@@ -6,7 +6,7 @@ class Country extends MY_Model{
 	}
 
 	function get_active(){
-		return $this->get_where_custom('active',1);
+		return $this->get_where_custom_order('active',1,"name");
 	}
 }
 

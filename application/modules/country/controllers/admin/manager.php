@@ -7,7 +7,7 @@ class Manager extends MX_Controller{
 	}
 
 	function index(){
-		 $data['Countries'] = $this->Country->get("id");
+		 $data['Countries'] = $this->Country->get("name");
 		 $data['title'] = 'Country managerment';
 		 $data['module'] = 'country';
 		 $data['view_file'] = 'admin/index';

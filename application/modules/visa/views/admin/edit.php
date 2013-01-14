@@ -32,6 +32,7 @@
         <form name="editvisa" action="<?php echo base_url()?>admin/visa/update" method="post" class="form feditvisa">
             <input type="hidden" name="code" id="code" value="<?php echo $visa->code?>" />
             <label>Email</label><input type="text" name="email" id="email" value="<?php echo $visa->email ?>" style="width:270px;" /><br />
+            <label>Total</label><input type="text" name="total" id="total" value="<?php echo $visa->total ?>" style="width:270px;margin-left:4px;" /><br />
             <label>Content</label>
             <textarea name="content" id="content">
                 <?php echo $visa->content?>

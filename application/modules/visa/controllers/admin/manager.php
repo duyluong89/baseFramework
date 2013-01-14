@@ -75,10 +75,11 @@ class Manager extends MX_Controller{
 	function update_visa(){
 		$code = $this->input->post("code");
 		$content = $this->input->post("content");
+		$total = $this->input->post("total");
 		$email = $this->input->post("email");
-		$data = array("email"=>$email, "content"=>$content);
+		$data = array("email"=>$email, "content"=>$content,"total"=>$total);
 		if($this->Visa->update_dispatch($code,$data)){
-			$this->index();
+			redirect("admin/visa");
 		}
 	}
 

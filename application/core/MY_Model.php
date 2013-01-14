@@ -12,7 +12,7 @@ function get_table() {
 
 function get($order_by){
 	$table = $this->get_table();
-	$this->db->order_by($order_by);
+	$this->db->order_by($order_by,"asc");
 	$query=$this->db->get($table);
 	return $query->result();
 }
@@ -35,10 +35,18 @@ function get_where($id){
 function get_where_custom($col, $value) {
 	$table = $this->get_table();
 	$this->db->where($col, $value);
+
 	$query=$this->db->get($table);
 	return $query->result();
 }
 
+function get_where_custom_order($col, $value,$order) {
+	$table = $this->get_table();
+	$this->db->where($col, $value);
+	$this->db->order_by($order);
+	$query=$this->db->get($table);
+	return $query->result();
+}
 function _insert($data){
 	$table = $this->get_table();
 	return $this->db->insert($table, $data);

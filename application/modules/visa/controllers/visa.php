@@ -66,7 +66,7 @@ class Visa extends MX_Controller{
                 
                 // otherwise, don't write anything or (if you want to 
                 // change the default button text), write this:
-            $this->paypal_lib->button('Payment with Paypal!');
+            $this->paypal_lib->button('Payment Now!');
             return $this->paypal_lib->paypal_form();
             //$this->load->view('home', $data);
         
@@ -147,7 +147,22 @@ class Visa extends MX_Controller{
 
         function send_paypal(){
             if(isset($_POST)){
+                //var_dump($_POST); die();
+                $hmtl ="<table>";
+                for ($i=0; $i < count($_POST["fullname"]); $i++) { 
+                    $html .="<tr><td>";
+                    $html .= $_POST["fullname"][$i] ."</td>";
+                     $html .= "<td>" . $_POST["fullname"][$i] ."</td>";
+                     $html .= "<td>" . $_POST["dateofbirth"][$i] ."</td>";
+                     $html .= "<td>" . $_POST["passport"][$i] ."</td>";
+                     $html .= "<td>" . $_POST["national"][$i] ."</td>";
+                     $html .= "<td>" . $_POST["pay_date"][$i] ."</td>";
+                     $html .= "<td>" . $_POST["date_in"][$i] ."</td>";
+                     $html .= "<td>" . $_POST["note"][$i] ."</td>";
+                     $html .= "<td>" . $_POST["rush"][$i] ."</td></tr>";
+                }
 
+                $html .="</table>";
             }
             echo json_encode("successfully");
          }
