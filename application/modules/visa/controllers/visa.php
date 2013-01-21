@@ -4,15 +4,26 @@ class Visa extends MX_Controller{
 		parent::__construct();
 		 $this->load->library('paypal_lib','onepay');
          $this->load->model("country/Country");
+         $this->load->helper("block");
 	}
 
 	function index(){
-            $data['Countries'] = $this->Country->get_active();
+           // $b = new Block();
+           // $data['Countries'] = $this->Country->get_active();
 			$data['module'] = 'visa';
-			$data['view_file'] = 'apply_visa';
-			$data['payment_form'] =  $this->form();
+			$data['view_file'] = 'index';
+			$data["block_home"] = getBlock("home");
 			echo Modules::run('template/two_cols_left',$data);
 	}
+
+    function visa_form(){
+        $data['Countries'] = $this->Country->get_active();
+        $data['module'] = 'visa';
+        $data['view_file'] = 'apply_visa';
+        $data['payment_form'] =  $this->form();
+        //$data["block"] = getBlock("home");
+        echo Modules::run('template/two_cols_left',$data);
+    }
 
 	/*
 	* proccess after apply visa. 

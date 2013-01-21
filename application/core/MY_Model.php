@@ -40,6 +40,14 @@ function get_where_custom($col, $value) {
 	return $query->result();
 }
 
+
+function getCustom($where){
+	$table = $this->get_table();
+	$this->db->where($where);
+	$query=$this->db->get($table);
+	return $query->result();
+}
+
 function get_where_custom_order($col, $value,$order) {
 	$table = $this->get_table();
 	$this->db->where($col, $value);

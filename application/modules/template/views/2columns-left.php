@@ -38,6 +38,7 @@
         <script type='text/javascript' src='<?php echo $base ?>js/custom.js'></script>
         <script type='text/javascript' src='<?php echo $base ?>js/jquery.equalheights.js'></script>
         <script type='text/javascript' src='<?php echo $base ?>js/comment-reply.js'></script>
+        <script type='text/javascript' src='<?php echo $base ?>ckeditor/ckeditor.js'></script>
         <meta name="generator" content="content here" />
         <link rel='canonical' href='http://livedemo00.template-help.com/wordpress_39638/' />
 
@@ -145,14 +146,7 @@
                     </div>
                 </div>
 
-                
-                <div class="block">
-                    <div class="block-title"><span>Payment Guidelines</span></div>
-                    <div class="block-content">
-                        
-                    </div>
-                </div>
-                
+                <?php echo (isset($payment))?$payment:""?>
             </div>
             <div id="cols-right">
                 <?php $this->load->view($module . '/' . $view_file) ?>

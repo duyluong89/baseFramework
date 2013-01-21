@@ -4,6 +4,7 @@ class Template extends MX_Controller{
 		$this->load->view('one_cols',$data);
 	}
 	function two_cols_left($data){
+		$data['payment'] = getBlock("payment");
 		$this->load->view('2columns-left',$data);
 	}
 	function three_cols($data){
